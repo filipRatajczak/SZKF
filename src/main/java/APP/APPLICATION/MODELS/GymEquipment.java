@@ -1,4 +1,4 @@
-package MODELS;
+package APP.APPLICATION.MODELS;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,20 +10,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Setter
+@Getter
 public class GymEquipment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
-    int id;
-    @Getter @Setter
-    String name;
-    @Getter @Setter
-    int numberOfItems;
-    @Getter @Setter
-    int availability;
+
+    private int id;
+    private String name;
+    private int numberOfItems;
+    private int availability;
 
 }
