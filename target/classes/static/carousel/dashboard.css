@@ -1,10 +1,11 @@
 body {
   font-size: .875rem;
+  font-family: Bebas Neue;
 }
 
 .feather {
-  width: 16px;
-  height: 16px;
+  width: 25px;
+  height: 25px;
   vertical-align: text-bottom;
 }
 
@@ -91,3 +92,84 @@ body {
 
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 80px auto;
+  background: #fff;
+
+  width: 800px;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.content .header {
+  font-size: 40pt;
+  padding-top:80px;
+  padding-left:80px;
+  color: #333;
+  font-family: "Bebas Neue";
+}
+
+
+.popup .content {
+  width: 800px;
+  height: 400px;
+  background: white;
+}
+
+.yes-btn{
+  width: 280px;
+  height: 105px;
+  color: red;
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+  border: 1px solid red;
+  padding-left: 100px;
+  padding-top: 10px;
+  font-size: 50pt;
+  cursor: pointer;
+}
+.yes-btn:hover{
+  background: #ff0000;
+  color:white;
+  transition: .5s;
+  text-decoration: none;
+}
+.no-btn{
+  width: 280px;
+  height: 105px;
+  color: #008000;
+  position: absolute;
+  bottom: 80px;
+  right: 80px;
+  border: 1px solid green;
+  padding-left: 100px;
+  padding-top: 10px;
+  font-size: 50pt;
+  cursor: pointer;
+}
+.no-btn:hover{
+  background: #008000;
+  color:white;
+  transition: .5s;
+  text-decoration: none;
+}
+

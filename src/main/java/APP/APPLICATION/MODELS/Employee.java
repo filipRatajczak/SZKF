@@ -3,6 +3,8 @@ package APP.APPLICATION.MODELS;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Entity
+@Setter
 public class Employee{
 
     @Id
