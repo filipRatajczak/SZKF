@@ -8,6 +8,16 @@ body {
   vertical-align: text-bottom;
 }
 
+.nav-item:hover {
+  cursor: pointer;
+}
+
+
+.nav-link:hover {
+  cursor: pointer;
+}
+
+
 /*
  * Sidebar
  */
@@ -31,6 +41,17 @@ body {
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
+
+.nav li{
+  cursor: pointer;
+}
+
+.nav a{
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
 
 .sidebar .nav-link {
   font-weight: 500;

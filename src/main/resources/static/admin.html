@@ -16,7 +16,7 @@
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SKZF</a>
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="/logout" >Wyloguj się</a>
+            <a class="nav-link" href="/logout">Wyloguj się</a>
         </li>
     </ul>
 </nav>
@@ -32,33 +32,40 @@
                             Strona główna <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Karnety.html">
-                            <span data-feather="file"></span>
-                            Karnety
-                        </a>
 
-                    </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="Sell.html">
+                        <a class="nav-link" id="carnets" onclick="
+                        let siema = () => {
+                            document.getElementById('carnets').className += ' active';
+                            document.getElementById('body').innerHTML = '';
+                            document.getElementById('body').innerHTML = `<iframe src='http://localhost:8080/tickets.html' style='width:100%; height:complex; border: none;'>`;
+                        };
+                        siema()" href="#">
+                            <span data-feather="file"></span>Karnety</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <span data-feather="shopping-cart"></span>
                             Sprzedaż
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Klienci.html">
+                        <a class="nav-link" href="#">
                             <span data-feather="users"></span>
                             Klienci
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Kalendarz.html">
+                        <a class="nav-link" href="#">
                             <span data-feather="calendar"></span>
                             Kalendarz
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Pracownicy.html">
+                        <a class="nav-link" href="#">
                             <span data-feather="briefcase"></span>
                             Pracownicy
                         </a>
@@ -96,25 +103,27 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                 <h1 class="h2">Strona główna - Administrator </h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                </div>
             </div>
-
-
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                    crossorigin="anonymous"></script>
-            <script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
-            <script src="carousel/js/vendor/popper.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-
-            <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-            <script>
-                feather.replace()
-            </script>
-
+            <div id="body" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2">Content </h1>
+            </div>
         </main>
+
+
     </div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="carousel/js/vendor/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
 </body>
 </html>

@@ -9,6 +9,23 @@
     <title>Dashboard Template for Bootstrap</title>
     <link href="carousel/css/bootstrap.min.css" rel="stylesheet">
     <link href="carousel/dashboard.css" rel="stylesheet">
+
+    <style>
+        .collapsible {
+
+        }
+
+
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f2f2f2;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -27,26 +44,31 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link " href="employee.html">
+                        <a class="nav-link" href="employee.html">
                             <span data-feather="home"></span>
                             Strona główna <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="Karnety.html">
+
+                        <a class="nav-link" href="tickets.html">
                             <span data-feather="file"></span>
                             Karnety
                         </a>
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Sell.html">
+                        <a class="nav-link collapsible" href="#">
                             <span data-feather="shopping-cart"></span>
-                            Sprzedaż
+                            CLIENTS
                         </a>
+                        <div class="content">
+                            <p>SIEMA</p>
+                            <p>SIEMA</p>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="Klienci.html">
+                        <a class="nav-link active" href="clients.html">
                             <span data-feather="users"></span>
                             Klienci
                         </a>
@@ -89,12 +111,17 @@
                             </a>
                         </li>
                     </ul>
+                </ul>
             </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                 <h1 class="h2">Klienci</h1>
+                <button class="collapsible">Open Collapsible</button>
+                <div class="content">
+                    <p>Siema</p>
+                </div>
                 <div class="btn-toolbar mb-2 mb-md-0">
                 </div>
             </div>
@@ -112,6 +139,24 @@
                 feather.replace()
             </script>
 
+            <script>
+                const coll = document.getElementsByClassName("collapsible");
+                let i;
 
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        const content = this.nextElementSibling;
+                        if (content.style.maxHeight){
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
+                    });
+                }
+            </script>
+        </main>
+    </div>
+</div>
 </body>
 </html>
