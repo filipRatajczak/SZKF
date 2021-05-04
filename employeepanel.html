@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../../../../Downloads/bootstrap-4.0.0/bootstrap-4.0.0/favicon.ico">
+    <title>Dashboard Template for Bootstrap</title>
+    <link href="carousel/css/bootstrap.min.css" rel="stylesheet">
+    <link href="carousel/dashboard.css" rel="stylesheet">
+
+    <style>
+        .collapsible {
+
+        }
+
+
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SKZF</a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="/logout" >Wyloguj się</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active " href="employeepanel.html">
+                            <span data-feather="home"></span>
+                            Strona główna <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="tickets.html">
+                            <span data-feather="file"></span>
+                            Karnety
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsible" href="ads">
+                            <span data-feather="shopping-cart"></span>
+                            Zakupy
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsible" href="#">
+                            <span data-feather="users"></span>
+                            Klienci
+                        </a>
+                        <div class="content">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Wyświetl klientów
+                            </a>
+                            <a class="nav-link" href="#">
+                                <span data-feather="plus"></span>
+                                Utwórz profil klienta
+                            </a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendar.html">
+                            <span data-feather="calendar"></span>
+                            Kalendarz
+                        </a>
+                    </li>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2">Strona główna Pracownik </h1>
+
+                <div class="btn-toolbar mb-2 mb-md-0">
+                </div>
+            </div>
+
+
+
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
+            <script src="carousel/js/vendor/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+
+            <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+            <script>
+                feather.replace()
+            </script>
+
+            <script>
+                const coll = document.getElementsByClassName("collapsible");
+                let i;
+
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        const content = this.nextElementSibling;
+                        if (content.style.maxHeight){
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
+                    });
+                }
+            </script>
+        </main>
+    </div>
+</div>
+</body>
+</html>
