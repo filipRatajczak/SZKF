@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../../../../Downloads/bootstrap-4.0.0/bootstrap-4.0.0/favicon.ico">
-    <title>SZKF | Employee</title>
+    <title>Dashboard Template for Bootstrap</title>
     <link href="carousel/css/bootstrap.min.css" rel="stylesheet">
     <link href="carousel/dashboard.css" rel="stylesheet">
 </head>
@@ -27,7 +27,7 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link " href="admin.html">
                             <span data-feather="home"></span>
                             Strona główna <span class="sr-only">(current)</span>
                         </a>
@@ -40,7 +40,7 @@
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="() => {}">
+                        <a class="nav-link" href="sell.html">
                             <span data-feather="shopping-cart"></span>
                             Sprzedaż
                         </a>
@@ -58,7 +58,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Pracownicy.html">
+                        <a class = "nav-link active" href="employee.html">
                             <span data-feather="briefcase"></span>
                             Pracownicy
                         </a>
@@ -71,19 +71,19 @@
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="ObecnyMiesiac.html">
+                            <a class="nav-link" href="currentmonth.html">
                                 <span data-feather="file-text"></span>
                                 Obecny miesiąc
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="OstatniKwartał.html">
+                            <a class="nav-link" href="lastquarter.html">
                                 <span data-feather="file-text"></span>
                                 Ostatni kwartał
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Sprzedażroczna.html">
+                            <a class="nav-link" href="yearsale.html">
                                 <span data-feather="file-text"></span>
                                 Sprzedaż roczna
                             </a>
@@ -93,16 +93,57 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Strona główna - Pracownik </h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 ">
+                <h1 class="h2">Pracownicy </h1>
+                <div class = btn-link>
+                    <a href="admin.html">
+                        <span data-feather="arrow-left"></span>
+                    </a>
                 </div>
             </div>
 
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                    crossorigin="anonymous"></script>
+            <table class="table table-striped table-sm">
+                <thead>
+                <tr>
+                    <th>Lp</th>
+                    <th>Nazwa</th>
+                    <th>Stanowisko</th>
+                    <th>Hasło </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Filip Ratajczak</td>
+                    <td>to</td>
+                    <td>Szef totalny</td>
+                    <td>
+
+                        <a class="btn-outline-danger" href="#popup1">
+                            <span data-feather="trash">
+                            </span>
+                        </a>
+
+                    </td>
+                    <td>
+                        <a class="btn-outline-dark" href="#EmployeeForm">
+                                <span data-feather="edit">
+
+                                </span>
+                        </a>
+                    </td>
+
+
+                </tbody>
+            </table>
+
+
+
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
             <script src="carousel/js/vendor/popper.min.js"></script>
             <script src="js/bootstrap.min.js"></script>

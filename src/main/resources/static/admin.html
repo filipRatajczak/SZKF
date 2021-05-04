@@ -9,6 +9,8 @@
     <title>Dashboard Template for Bootstrap</title>
     <link href="carousel/css/bootstrap.min.css" rel="stylesheet">
     <link href="carousel/dashboard.css" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -16,7 +18,7 @@
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SKZF</a>
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="/logout">Wyloguj się</a>
+            <a class="nav-link" href="/logout" >Wyloguj się</a>
         </li>
     </ul>
 </nav>
@@ -27,48 +29,72 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="admin.html">
                             <span data-feather="home"></span>
                             Strona główna <span class="sr-only">(current)</span>
                         </a>
                     </li>
-
-
                     <li class="nav-item">
-                        <a class="nav-link" id="carnets" onclick="
-                        let siema = () => {
-                            document.getElementById('carnets').className += ' active';
-                            document.getElementById('body').innerHTML = '';
-                            document.getElementById('body').innerHTML = `<iframe src='http://localhost:8080/tickets.html' style='width:100%; height:complex; border: none;'>`;
-                        };
-                        siema()" href="#">
-                            <span data-feather="file"></span>Karnety</a>
-                    </li>
 
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="shopping-cart"></span>
-                            Sprzedaż
+                        <a class="nav-link collapsible" href="#">
+                            <span data-feather="file"></span>
+                            Karnety
                         </a>
+                        <div class="content">
+                            <a class="nav-link" href="tickets.html">
+                                <span data-feather="users"></span>
+                                Wyświetl karnety
+                            </a>
+                            <a class="nav-link" href="#">
+                                <span data-feather="plus"></span>
+                                Utwórz karnet
+                            </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link collapsible" href="sell.html">
+                            <span data-feather="shopping-cart"></span>
+                            Zakupy
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsible" href="#">
                             <span data-feather="users"></span>
                             Klienci
                         </a>
+                        <div class="content">
+                            <a class="nav-link" href="clients.html">
+                                <span data-feather="users"></span>
+                                Wyświetl klientów
+                            </a>
+                            <a class="nav-link" href="#ClientForm">
+                                <span data-feather="plus"></span>
+                                Utwórz profil klienta
+                            </a>
+
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="calendar.html">
                             <span data-feather="calendar"></span>
                             Kalendarz
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class = "nav-link collapsible" href="#">
                             <span data-feather="briefcase"></span>
                             Pracownicy
                         </a>
+                        <div class="content">
+                            <a class="nav-link" href ="employee.html">
+                                <span data-feather="briefcase"></span>
+                                Wyświetl pracowników
+                            </a>
+                            <a class="nav-link" href="#EmployeeForm">
+                                <span data-feather="plus"></span>
+                                Utwórz profil klienta
+                            </a>
+                        </div>
                     </li>
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                         <span>Zapisane raporty</span>
@@ -77,53 +103,134 @@
                         </a>
                     </h6>
                     <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="ObecnyMiesiac.html">
+                        <li class="nav-item ">
+                            <a class="nav-link collapsible" href="#">
                                 <span data-feather="file-text"></span>
                                 Obecny miesiąc
                             </a>
+                            <div class="content">
+                                <a class="nav-link" href="currentmonth.html">
+                                    <span data-feather="file-text"></span>
+                                    Produkty
+                                </a>
+                                <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Karnety
+                                </a>
+
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="OstatniKwartał.html">
+                            <a class="nav-link collapsible" href="#">
                                 <span data-feather="file-text"></span>
-                                Ostatni kwartał
+                                Obecny kwartał
                             </a>
+                            <div class="content">
+                                <a class="nav-link" href="lastquarter.html">
+                                    <span data-feather="file-text"></span>
+                                    Produkty
+                                </a>
+                                <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Karnety
+                                </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Sprzedażroczna.html">
+                            <a class="nav-link collapsible" href="#">
                                 <span data-feather="file-text"></span>
                                 Sprzedaż roczna
                             </a>
+                            <div class="content">
+                                <a class="nav-link" href="yearsale.html">
+                                    <span data-feather="file-text"></span>
+                                    Produkty
+                                </a>
+                                <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Karnety
+                                </a>
                         </li>
                     </ul>
                 </ul>
             </div>
         </nav>
+        <div id="ClientForm" class="overlay">
+
+            <p> <input type="text" placeholder="Imię" onfocus="this.placeholder=''" onblur="this.placeholder='Imię'"></p>
+            <p> <input type="text" placeholder="Nazwisko" onfocus="this.placeholder=''" onblur="this.placeholder='Nazwisko'"> </p>
+            <p> <input type="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'"></p>
+            <p> <input type="tel" placeholder="Numer Telefonu " onfocus="this.placeholder=''" onblur="this.placeholder='Numer Telefonu'"> </p>
+            <p> <input placeholder="Data Urodzenia" type="text" onfocus="this.type='date'"  onblur="this.type='text'"></p>
+            <div class="declinebutton">
+                <div class="button btn-one">
+                    <span>Anuluj</span>
+                </div>
+            </div>
+            <div class="acceptbutton">
+                <div class="button btn-one">
+                    <span>Zatwierdź</span>
+                </div>
+            </div>
+            </div>
+        <div id="EmployeeForm" class="overlay">
+            <p> <input type="text" placeholder="Nazwa Pracownika" onfocus="this.placeholder''" onblur="this.placeholder'Nazwa Pracownika'"</p>
+            <p> <input type="text" placeholder="Stanowisko" onfocus="this.placeholder''" onblur="this.placeholder'Stanowisko'"</p>
+            <p> <input type="password" placeholder="Hasło" onfocus="this.placeholder''" onblur="this.placeholder'hasło'"> </p>
+            <p> <input type="password" placeholder=" potwierdź Hasło" onfocus="this.placeholder''" onblur="this.placeholder'potwierdź hasło'"> </p>
+
+            <div class="declinebutton">
+                <div class="button btn-one">
+                    <span>Anuluj</span>
+                </div>
+            </div>
+
+            <div class="acceptbutton">
+                <div class="button btn-one">
+                    <span>Zatwierdź</span>
+                </div>
+            </div>
+        </div>
+        </div>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Strona główna - Administrator </h1>
+                <h1 class="h2">Strona główna admin</h1>
+
+                <div class="btn-toolbar mb-2 mb-md-0">
+                </div>
             </div>
-            <div id="body" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Content </h1>
-            </div>
+
+
+
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
+            <script src="carousel/js/vendor/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+
+            <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+            <script>
+                feather.replace()
+            </script>
+
+            <script>
+                const coll = document.getElementsByClassName("collapsible");
+                let i;
+
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        const content = this.nextElementSibling;
+                        if (content.style.maxHeight){
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
+                    });
+                }
+            </script>
         </main>
-
-
     </div>
 </div>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="carousel/js/vendor/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-<script>
-    feather.replace()
-</script>
 </body>
 </html>
