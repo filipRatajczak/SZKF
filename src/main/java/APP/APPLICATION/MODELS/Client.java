@@ -29,9 +29,9 @@ public class Client {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "trainer_id")
     private Trainer trainer;
-    @OneToMany(mappedBy = "client")
-    private Set<Payment> paymentList;
-
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client", orphanRemoval = true)
+    private Set<Payment> payments;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client", orphanRemoval = true)
+    private Set<Entrences> entrences;
 
 }

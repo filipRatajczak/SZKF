@@ -2,13 +2,15 @@ package APP.APPLICATION.CONTROLLER;
 
 
 import APP.APPLICATION.REPOSITORY.EmployeeRepository;
+import APP.APPLICATION.SECURITY.UsernameAuth;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class View {
 
-    EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository;
 
     public View(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
@@ -32,6 +34,11 @@ public class View {
     @GetMapping("/login")
     public String login() {
         return "login.html";
+    }
+
+    @GetMapping("/tickets")
+    public String tickets() {
+        return "ticket.html";
     }
 
 

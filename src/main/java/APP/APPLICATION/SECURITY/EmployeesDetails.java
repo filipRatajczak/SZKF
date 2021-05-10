@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 
 public class EmployeesDetails implements UserDetails {
 
-    @Autowired
     String username;
     String password;
     List<GrantedAuthority> role;
@@ -26,7 +25,6 @@ public class EmployeesDetails implements UserDetails {
                 employee.getRole().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
-
     }
 
     @Override
@@ -36,13 +34,11 @@ public class EmployeesDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-
         return password;
     }
 
     @Override
     public String getUsername() {
-
         return username;
     }
 

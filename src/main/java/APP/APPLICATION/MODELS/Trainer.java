@@ -21,6 +21,6 @@ public class Trainer {
     private String firstName;
     private String secondName;
     private String description;
-    @OneToMany(mappedBy = "trainer")
-    private Set<Client> clientSet;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "trainer", orphanRemoval = true)
+    private Set<Client> clients;
 }

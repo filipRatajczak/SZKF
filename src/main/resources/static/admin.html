@@ -36,15 +36,12 @@
 
                     <li class="nav-item">
                         <a class="nav-link" id="carnets" onclick="
-                        let siema = () => {
                             document.getElementById('carnets').className += ' active';
                             document.getElementById('body').innerHTML = '';
-                            document.getElementById('body').innerHTML = `<iframe src='http://localhost:8080/tickets.html' style='width:100%; height:complex; border: none;'>`;
-                        };
-                        siema()" href="#">
+                            document.getElementById('body').innerHTML = `<iframe src='tickets.html' style='width:100%; height:complex; border: none;'>`;
+                            " href="#">
                             <span data-feather="file"></span>Karnety</a>
                     </li>
-
 
                     <li class="nav-item">
                         <a class="nav-link" href="#">
