@@ -44,34 +44,42 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="employee.html">
+                        <a class="nav-link" href="admin.html">
                             <span data-feather="home"></span>
                             Strona główna <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
 
-                        <a class="nav-link" href="tickets.html">
+                        <a class="nav-link" href="print_tickets.html">
                             <span data-feather="file"></span>
                             Karnety
                         </a>
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link collapsible" href="#">
+                        <a class="nav-link collapsible" href="ads">
                             <span data-feather="shopping-cart"></span>
-                            CLIENTS
+                            Zakupy
                         </a>
-                        <div class="content">
-                            <p>SIEMA</p>
-                            <p>SIEMA</p>
-                        </div>
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="clients.html">
+                        <a class="nav-link collapsible" href="#">
                             <span data-feather="users"></span>
                             Klienci
                         </a>
+                        <div class="content">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Wyświetl klientów
+                            </a>
+                            <a class="nav-link" href="#">
+                                <span data-feather="plus"></span>
+                                Utwórz profil klienta
+                            </a>
+
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="calendar.html">
@@ -80,7 +88,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class = "nav-link" href="Pracownicy.html">
+                        <a class = "nav-link" href="employee.html">
                             <span data-feather="briefcase"></span>
                             Pracownicy
                         </a>
@@ -93,19 +101,19 @@
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="ObecnyMiesiac.html">
+                            <a class="nav-link" href="currentmonth.html">
                                 <span data-feather="file-text"></span>
                                 Obecny miesiąc
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="OstatniKwartał.html">
+                            <a class="nav-link" href="lastquarter.html">
                                 <span data-feather="file-text"></span>
                                 Ostatni kwartał
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Sprzedażroczna.html">
+                            <a class="nav-link" href="yearsale.html">
                                 <span data-feather="file-text"></span>
                                 Sprzedaż roczna
                             </a>
@@ -116,18 +124,108 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 ">
                 <h1 class="h2">Klienci</h1>
-                <button class="collapsible">Open Collapsible</button>
-                <div class="content">
-                    <p>APP.APPLICATION.Siema</p>
-                </div>
+
                 <div class="btn-toolbar mb-2 mb-md-0">
                 </div>
             </div>
+            <table class="table table-striped table-sm">
+                <thead>
+                <tr>
+                    <th>Lp</th>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Email </th>
+                    <th>Numer Telefonu</th>
+                    <th>Data Urodzenia</th>
+                    <th>Portfel</th>
+                    <th>Wpłać</th>
+                    <th>kup karnet</th>
+                    <th>Ważność karnetu</th>
+                    <th>Wejście</th>
+                    <th>wyjście</th>
+                    <th>usuń</th>
+                    <th>edytuj</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Andrzej</td>
+                    <td>Kowalski</td>
+                    <td>Kowalski@gmail.com</td>
+                    <td>123456789</td>
+                    <td>01.09.1939</td>
+                    <td>0 zł</td>
+
+                    <td>
+                        <a class="btn-outline-info" href="#PocketForm">
+                            <span data-feather="dollar-sign" class="btn-outline-info"></span>
+
+                        </a>
+
+                    </td>
+                    <td>
+                        <a class="btn-outline-info" href="#">
+                            <span data-feather="credit-card" class="btn-outline-info">
+
+                            </span>
+                        </a>
 
 
+                    </td>
+                    <td>
+                        <span> Ważny </span>
+                    </td>
+                    <td>
+                        <a class="btn-outline-success" >
+                            <span data-feather="log-in" class="btn-outline-success">
 
+                            </span>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn-outline-danger">
+                            <span data-feather="log-out" class="btn-outline-danger">
+                            </span>
+                        </a>
+                    </td>
+                    <td>
+
+                        <a class="btn-outline-danger" href="#">
+                            <span data-feather="trash" class="btn-outline-danger" >
+                            </span>
+                        </a>
+
+                    </td>
+                    <td>
+                        <a class="btn-outline-dark" href="#">
+                                <span data-feather="edit" class="btn-outline-dark">
+                                </span>
+                        </a>
+                    </td>
+
+                </tbody>
+            </table>
+
+            <div id="PocketForm" class="overlay">
+                <input type="text" placeholder="Wpisz kwotę (zł) :" onfocus="this.placeholder=''" onblur="this.placeholder='Wpisz kwotę (zł) :'">
+
+                <div class="declinebutton">
+                    <div class="button btn-one">
+                        <span>Anuluj</span>
+                    </div>
+                </div>
+
+                <div class="acceptbutton">
+                    <div class="button btn-one">
+                        <span>Zatwierdź</span>
+                    </div>
+                </div>
+
+            </div>
 
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>

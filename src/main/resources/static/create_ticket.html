@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="container">
+    <form action="/employee/create-ticket" method="post">
+        <p><input type="text" placeholder="Nazwa karnetu :" onfocus="this.placeholder=''" onblur="this.placeholder='Wpisz nazwę'" id="ticketName"></p>
+        <p><input type="number" placeholder="Czas trwania (dni):" onfocus="this.placeholder=''" onblur="this.placeholder='Czas trwania (dni):'" id="time"></p>
+        <p><input type="number" placeholder="Wpisz kwotę (zł) :" onfocus="this.placeholder=''" onblur="this.placeholder='Wpisz kwotę (zł):'" id="price"></p>
+        <div class="declinebutton">
+            <div class="button btn-one">
+                <span>Anuluj</span>
+            </div>
+        </div>
+        <input type="button" value="Zatwierdź" class="btn-success" onclick="createTicket()">
+    </form>
+</div>
+
+</body>
+<script src="ticketAPI.js"></script>
+</html>

@@ -26,4 +26,5 @@ public class Entrences {
     @JoinColumn(name = "client_id")
     Client client;
 
+
 }
