@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Admin View | SZKF</title>
     <link href="carousel/css/bootstrap.min.css" rel="stylesheet">
     <link href="carousel/dashboard.css" rel="stylesheet">
 </head>
@@ -15,7 +15,7 @@
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SKZF</a>
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="/logout" >Wyloguj się</a>
+            <a class="nav-link" href="/logout">Wyloguj się</a>
         </li>
     </ul>
 </nav>
@@ -26,126 +26,175 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link " href="admin.html">
+                        <a class="nav-link active" href="admin.html">
                             <span data-feather="home"></span>
                             Strona główna <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="print_tickets.html">
+                        <a class="nav-link collapsible" href="#">
                             <span data-feather="file"></span>
                             Karnety
                         </a>
+                        <div class="content">
+                            <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'print_tickets.html' style='height: 1000px; width: 100%; border: none;'></iframe>`;">
+                                <span data-feather="file"></span>
+                                Wyświetl karnety
+                            </a>
 
+                            <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'create_ticket.html' style='height: 1000px; width: 100%; border: none;'></iframe>`;">
+                                <span data-feather="plus"></span>
+                                Utwórz karnet
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sell.html">
+                        <a class="nav-link collapsible" href="#">
                             <span data-feather="shopping-cart"></span>
-                            Sprzedaż
+                            Produkty
                         </a>
+                        <div class="content">
+                            <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'print_products.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                <span data-feather="shopping-cart"></span>
+                                Wyświetl produkty
+                            </a>
+                            <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'create_product.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                <span data-feather="shopping-cart"></span>
+                                Dodaj produkt
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="clients.html">
+                        <a class="nav-link collapsible" href="#">
                             <span data-feather="users"></span>
                             Klienci
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="calendar.html">
-                            <span data-feather="calendar"></span>
-                            Kalendarz
-                        </a>
-                    </li>
-                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Zapisane raporty</span>
-                        <a class="d-flex align-items-center text-muted" href="Zapisane.raporty.html">
-                            <span data-feather="plus-circle"></span>
-                        </a>
-                    </h6>
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="currentmonth.html">
-                                <span data-feather="file-text"></span>
-                                Obecny miesiąc
+                        <div class="content">
+                            <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'print_clients.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                <span data-feather="users"></span>
+                                Wyświetl klientów
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="lastquarter.html">
-                                <span data-feather="file-text"></span>
-                                Ostatni kwartał
+
+                            <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'create_clients.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                <span data-feather="user-plus"></span>
+                                Utwórz profil klienta
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="yearsale.html">
-                                <span data-feather="file-text"></span>
-                                Sprzedaż roczna
+                            <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'active_clients.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                <span data-feather="user-check"></span>
+                                Klienci w klubie
                             </a>
-                        </li>
-                    </ul>
+                        </div>
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Zapisane raporty</span>
+                            <a class="d-flex align-items-center text-muted">
+                                <span data-feather="plus-circle"></span>
+                            </a>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link collapsible" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Obecny miesiąc
+                                </a>
+                                <div class="content">
+                                    <a class="nav-link" href="#" onclick="
+                                document.getElementById('frame-div').innerHTML = '';
+                                document.getElementById('frame-div').innerHTML = `<iframe src = 'last_month_product.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                        <span data-feather="file-text"></span>
+                                        Produkty
+                                    </a>
+                                    <a class="nav-link" href="#" onclick="
+                                document.getElementById('frame-div').innerHTML = '';
+                                document.getElementById('frame-div').innerHTML = `<iframe src = 'last_month_ticket.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                        <span data-feather="file-text"></span>
+                                        Karnety
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link collapsible" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Obecny kwartał
+                                </a>
+                                <div class="content">
+                                    <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'last_quarter_product.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                        <span data-feather="file-text"></span>
+                                        Produkty
+                                    </a>
+                                    <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'last_quarter_ticket.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                        <span data-feather="file-text"></span>
+                                        Karnety
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link collapsible" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Sprzedaż roczna
+                                </a>
+                                <div class="content">
+                                    <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'last_year_product.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                        <span data-feather="file-text"></span>
+                                        Produkty
+                                    </a>
+                                    <a class="nav-link" href="#" onclick="
+                            document.getElementById('frame-div').innerHTML = '';
+                            document.getElementById('frame-div').innerHTML = `<iframe src = 'last_year_ticket.html' style='height: 1000px; width: 100%; border: none;'></iframe>`; ">
+                                        <span data-feather="file-text"></span>
+                                        Karnety
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                </ul>
             </div>
         </nav>
+    </div>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <div class="d-flex justify-content-between flex-md-nowrap align-items-center" id="frame-div"></div>
+    </main>
+</div>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 ">
-                <h1 class="h2">Pracownicy </h1>
-                <div class = btn-link>
-                    <a href="admin.html">
-                        <span data-feather="arrow-left"></span>
-                    </a>
-                </div>
-            </div>
-
-
-            <table class="table table-striped table-sm">
-                <thead>
-                <tr>
-                    <th>Lp</th>
-                    <th>Nazwa</th>
-                    <th>Stanowisko</th>
-                    <th>Hasło </th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Filip Ratajczak</td>
-                    <td>to</td>
-                    <td>Szef totalny</td>
-                    <td>
-
-                        <a class="btn-outline-danger" href="#popup1">
-                            <span data-feather="trash">
-                            </span>
-                        </a>
-
-                    </td>
-                    <td>
-                        <a class="btn-outline-dark" href="#EmployeeForm">
-                                <span data-feather="edit">
-
-                                </span>
-                        </a>
-                    </td>
-
-
-                </tbody>
-            </table>
-
-
-
-
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
-            <script src="carousel/js/vendor/popper.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-
-            <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-            <script>
-                feather.replace()
-            </script>
-
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>feather.replace();</script>
+<script>
+    const coll = document.getElementsByClassName("collapsible");
+    let i;
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            const content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>
 </body>
 </html>

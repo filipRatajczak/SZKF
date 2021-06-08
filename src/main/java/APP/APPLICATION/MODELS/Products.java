@@ -1,8 +1,9 @@
 package APP.APPLICATION.MODELS;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -10,22 +11,18 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Set;
 
-@Entity
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
-public class Ticket {
-
-    public Ticket(){}
-
+@NoArgsConstructor
+@Entity
+public class Products {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
-    String name;
-    BigDecimal price;
-    int periodOfValidity;
+    private long id;
+    private String productName;
+    private BigDecimal price;
     @JsonIgnore
-    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "products", cascade = CascadeType.ALL, orphanRemoval = true)
     Set<Payments> payments;
 }

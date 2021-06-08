@@ -16,68 +16,63 @@
 <body>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 ">
-        <h1 class="h2">Pracownicy</h1>
+        <h1 class="h2">Produkty</h1>
     </div>
     <table class="table table-striped table-sm">
         <thead>
         <tr>
             <th>ID</th>
-            <th>Imię</th>
-            <th>Stanowisko</th>
-            <th>Usun pracownika</th>
-            <th>Edytuj pracownika</th>
+            <th>Nazwa</th>
+            <th>Cena</th>
+            <th></th>
+            <th></th>
         </tr>
         </thead>
-        <tbody id="employee-table">
-        <tr>
+        <tbody id="product-table">
         </tbody>
     </table>
     <!-- DELETE CLIENT POPUP -->
-    <div class="modal fade" id="delete-employee-popup" tabindex="-1" role="dialog"
-         aria-labelledby="delete-employee-label"
+    <div class="modal fade" id="delete-product-popup" tabindex="-1" role="dialog" aria-labelledby="delete-product-label"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="delete-employee-label">Usunięcie pracownika</h5>
+                    <h5 class="modal-title" id="delete-product-label">Usunięcie produktu</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h5>Czy potwierdzasz usunięcie pracownika?</h5>
+                    <h5>Czy potwierdzasz usunięcie produktu?</h5>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="deleteEmployee()">Tak
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="deleteProduct()">Tak
                     </button>
                 </div>
             </div>
         </div>
     </div>
     <!-- EDIT CLIENT POPUP -->
-    <div class="modal fade" id="edit-employee-popup" tabindex="-1" role="dialog" aria-labelledby="edit-employee-label"
+    <div class="modal fade" id="edit-product-popup" tabindex="-1" role="dialog" aria-labelledby="edit-product-label"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="edit-client-label">Edytuj pracownika</h5>
+                    <h5 class="modal-title" id="edit-product-label">Edytuj produkt</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <label for="edit-employee-name"></label><input type="text" class="input-group"
-                                                                   placeholder="Nazwa pracownika"
-                                                                   id="edit-employee-name">
-                    <label for="edit-employee-role"></label><input type="text" class="input-group"
-                                                                   placeholder="Stanowisko" id="edit-employee-role">
-                    <label for="edit-employee-password"></label><input type="password" class="input-group"
-                                                                       placeholder="Hasło" id="edit-employee-password">
+                    <label for="edit-product-name"></label><input type="text" placeholder="Nazwa produktu"
+                                                                  id="edit-product-name">
+                    <label for="edit-product-price"></label><input type="text" placeholder="Cena"
+                                                                   id="edit-product-price">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="editEmployee()">Zapisz
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="editProduct()">Zapisz
                     </button>
                 </div>
             </div>
@@ -102,15 +97,15 @@
         crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="js/employeeAPI.js"></script>
+<script src="js/productAPI.js"></script>
 <script>
-    async function callPrintEmployees() {
+    async function callPrintProducts() {
         document.addEventListener("DOMContentLoaded", () => {
-            printEmployees();
+            printProducts();
         });
     }
 
-    callPrintEmployees();
+    callPrintProducts();
 </script>
 </body>
 </html>

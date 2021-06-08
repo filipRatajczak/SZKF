@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class View {
 
-    public View(EmployeeRepository employeeRepository) {}
+    public View() {
+    }
 
     @GetMapping("/")
     public String index() {
@@ -29,12 +30,6 @@ public class View {
     public String login() {
         return "login.html";
     }
-
-    @GetMapping("/tickets")
-    public String tickets() {
-        return "ticket.html";
-    }
-
 
 
 }

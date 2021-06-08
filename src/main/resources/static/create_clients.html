@@ -11,27 +11,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form id="ClientForm">
-    <p><input type="text" placeholder="Imię" onfocus="this.placeholder=''" onblur="this.placeholder='Imię'"
-              id="firstname"></p>
-    <p><input type="text" placeholder="Nazwisko" onfocus="this.placeholder=''" onblur="this.placeholder='Nazwisko'"
-              id="lastname"></p>
-    <p><input type="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'"
-              id="email"></p>
-    <p><input placeholder="Data Urodzenia" type="text" onfocus="this.type='date'" onblur="this.type='text'"
-              id="birthdate"></p>
-    <div class="declinebutton">
-        <div class="button btn-one">
-            <a href="admin.html"><span>Anuluj</span> </a>
-        </div>
-    </div>
+<div id="container">
+    <form id="client-form">
+        <label for="client-firstname"></label><input type="text" placeholder="Imię" id="client-firstname">
+        <label for="client-lastname"></label><input type="text" placeholder="Nazwisko" id="client-lastname">
+        <label for="client-email"></label><input type="email" placeholder="Email" id="client-email">
+        <label for="client-birthdate"></label><input placeholder="Data urodzenia" type="date" id="client-birthdate">
 
-    <div class="acceptbutton">
-        <div class="button btn-one">
-            <span onclick="createClient()">Zatwierdź</span>
+        <div class="declinebutton">
+            <div class="button btn-one">
+                <a href="admin.html"><span>Anuluj</span> </a>
+            </div>
         </div>
-    </div>
-</form>
-<script src="clientAPI.js"></script>
+
+        <div class="acceptbutton">
+            <div class="button btn-one">
+                <span onclick="createClient()">Zatwierdź</span>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="js/clientAPI.js"></script>
 </body>
 </html>

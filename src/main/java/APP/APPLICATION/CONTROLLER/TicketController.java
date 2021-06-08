@@ -2,31 +2,39 @@ package APP.APPLICATION.CONTROLLER;
 
 
 import APP.APPLICATION.MODELS.Ticket;
-import APP.APPLICATION.REPOSITORY.TicketRepository;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import APP.APPLICATION.POJOS.TicketPojo;
+import APP.APPLICATION.SERVICES.TicketService;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class TicketController {
 
-    TicketRepository ticketRepository;
 
-    public TicketController(TicketRepository ticketRepository) {
-        this.ticketRepository = ticketRepository;
+    private final TicketService ticketService;
+
+    public TicketController(TicketService ticketService) {
+        this.ticketService = ticketService;
     }
 
     @PostMapping(value = "/employee/ticket/create")
-    public ResponseEntity<Ticket> createTicket(@RequestBody Ticket ticket) {
-        return ResponseEntity.ok(ticket);
+    public void createTicket(@RequestBody TicketPojo ticketPojo) {
+        ticketService.createTicket(ticketPojo);
     }
 
     @GetMapping(value = "/employee/ticket/getAll")
-    public ResponseEntity<List<Ticket>> getAllTickets() {
-        return ResponseEntity.ok(ticketRepository.findAll());
+    public List<Ticket> getAllTickets() {
+        return ticketService.getAllProducts();
+    }
+
+    @DeleteMapping(value = "employee/ticket/{id}/delete")
+    public void deleteProduct(@PathVariable Long id) {
+        ticketService.deleteProduct(id);
+    }
+
+    @PutMapping(value = "employee/ticket/{id}/edit")
+    public void editProduct(@PathVariable Long id, @RequestBody TicketPojo ticketPojo) {
+        ticketService.editProduct(id, ticketPojo);
     }
 }

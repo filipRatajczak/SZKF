@@ -6,18 +6,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="carousel/css/bootstrap.min.css" rel="stylesheet">
-    <link href="carousel/dashboard.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
 </head>
-
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 ">
         <h1 class="h2">Utworzone karnety</h1>
-        <div class=btn-link>
-            <a href="#" onclick="printTicket()">
-                <span data-feather="arrow-left"></span>
-            </a>
-        </div>
     </div>
     <table class="table table-striped table-sm">
         <thead>
@@ -25,35 +23,88 @@
             <th>ID</th>
             <th>Nazwa</th>
             <th>Cena</th>
-            <th></th>
-            <th></th>
+            <th>Usuń</th>
+            <th>Edytuj</th>
         </tr>
         </thead>
-        <tbody id="table">
+        <tbody id="ticket-table">
         </tbody>
     </table>
-    <div id="popup1" class="overlay">
-        <div class="popup">
-            <div class="content">
-                <div class="header">Potwierdzasz usunięcie karnetu?</div>
-                <div class="line"></div>
-                <a class="yes-btn" href="#">Tak </a>
-                <a class="no-btn" href="#">Nie</a>
-                <a class="cancel" href="#"></a>
+    <!-- DELETE CLIENT POPUP -->
+    <div class="modal fade" id="delete-ticket-popup" tabindex="-1" role="dialog" aria-labelledby="delete-ticket-label"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="delete-ticket-label">Usunięcie karnetu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Czy potwierdzasz usunięcie karnetu?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="deleteTicket()">Tak
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- EDIT TICKET POPUP -->
+    <div class="modal fade" id="edit-ticket-popup" tabindex="-1" role="dialog" aria-labelledby="edit-ticket-label"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="edit-ticket-label">Edytuj karnet</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="edit-ticket-name"></label><input type="text" placeholder="Nazwa karnetu"
+                                                                 id="edit-ticket-name">
+                    <label for="edit-ticket-price"></label><input type="text" placeholder="Cena" id="edit-ticket-price">
+                    <label for="edit-duration-time"></label><input type="text" placeholder="Czas trwania"
+                                                                   id="edit-duration-time">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="editTicket()">Zapisz
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </main>
+<script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="carousel/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="carousel/js/vendor/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <script>
     feather.replace()
 </script>
-<script src="ticketAPI.js">printTicket()</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(printTicket, 100);
+    });
+</script>
+<script src="js/ticketAPI.js"></script>
 </body>
 </html>
